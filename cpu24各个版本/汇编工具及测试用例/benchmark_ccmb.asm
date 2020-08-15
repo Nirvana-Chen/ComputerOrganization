@@ -1,9 +1,9 @@
 #############################################################
-#²âÊÔj,jal,jrÖ¸Áî£¬ÈçĞèÒª¿É·Ö¿ª²âÊÔ£¬Ö´ĞĞÕı³£Ó¦¸ÃÊÇ15¸öÖÜÆÚ revise date 2015/12/17 tiger
+#æµ‹è¯•j,jal,jræŒ‡ä»¤ï¼Œå¦‚éœ€è¦å¯åˆ†å¼€æµ‹è¯•ï¼Œæ‰§è¡Œæ­£å¸¸åº”è¯¥æ˜¯15ä¸ªå‘¨æœŸ revise date 2015/12/17 tiger
 #############################################################
 .text
 benchmark_start:
-  addi $s1,$zero, 1   #²âÊÔj,jal,jrÖ¸Áî£¬ÈçĞèÒª¿É·Ö¿ª²âÊÔ£¬Ö´ĞĞÕı³£Ó¦¸ÃÊÇ15¸öÖÜÆÚ
+  addi $s1,$zero, 1   #æµ‹è¯•j,jal,jræŒ‡ä»¤ï¼Œå¦‚éœ€è¦å¯åˆ†å¼€æµ‹è¯•ï¼Œæ‰§è¡Œæ­£å¸¸åº”è¯¥æ˜¯15ä¸ªå‘¨æœŸ
  j jmp_next1
  addi $s1,$zero, 1
  addi $s2,$zero, 2
@@ -28,21 +28,21 @@ jmp_next4:jal jmp_count
 ######################################
 
 
-#ÒÆÎ»²âÊÔ  ĞèÒªÖ§³Ö³¬addi,sll,add,syscall,srl,sll,sra,beq,j,syscall    revise date:2015/12/16 tiger
+#ç§»ä½æµ‹è¯•  éœ€è¦æ”¯æŒè¶…addi,sll,add,syscall,srl,sll,sra,beq,j,syscall    revise date:2015/12/16 tiger
 
 .text
-addi $s0,$zero,1     #¼òµ¥ÒÆÎ»£¬Ñ­»·²âÊÔ£¬0ºÅÇøÓòÏÔÊ¾µÄÊÇ³õÊ¼Öµ1×óÒÆ1Î»ÖØ¸´15´ÎµÄÖµ£¬1ºÅÇøÓòÊÇÀÛ¼ÓÖµ
+addi $s0,$zero,1     #ç®€å•ç§»ä½ï¼Œå¾ªç¯æµ‹è¯•ï¼Œ0å·åŒºåŸŸæ˜¾ç¤ºçš„æ˜¯åˆå§‹å€¼1å·¦ç§»1ä½é‡å¤15æ¬¡çš„å€¼ï¼Œ1å·åŒºåŸŸæ˜¯ç´¯åŠ å€¼
 addi $s1,$zero,1  
-sll $s1, $s1, 31   #Âß¼­×óÒÆ31Î» $s1=0x80000000
+sll $s1, $s1, 31   #é€»è¾‘å·¦ç§»31ä½ $s1=0x80000000
  
 
 ###################################################################
-#                Âß¼­ÓÒÒÆ²âÊÔ 
-# ÏÔÊ¾ÇøÓòÒÀ´ÎÏÔÊ¾0x80000000 0x20000000 0x08000000 0x02000000 0x00800000 0x00200000 0x00080000 0x00020000 0x00008000 0x00002000 0x00000800 0x00000200 0x00000080 0x00000020 0x00000008 0x00000002 0x00000000  
+#                é€»è¾‘å³ç§»æµ‹è¯• 
+# æ˜¾ç¤ºåŒºåŸŸä¾æ¬¡æ˜¾ç¤º0x80000000 0x20000000 0x08000000 0x02000000 0x00800000 0x00200000 0x00080000 0x00020000 0x00008000 0x00002000 0x00000800 0x00000200 0x00000080 0x00000020 0x00000008 0x00000002 0x00000000  
 ###################################################################
-LogicalRightShift:            #Âß¼­ÓÒÒÆ²âÊÔ£¬½«×î¸ßÎ»1ÖğÎ»ÏòÓÒÓÒÒÆÖ±ÖÁ½á¹ûÎªÁã
+LogicalRightShift:            #é€»è¾‘å³ç§»æµ‹è¯•ï¼Œå°†æœ€é«˜ä½1é€ä½å‘å³å³ç§»ç›´è‡³ç»“æœä¸ºé›¶
 
-add    $a0,$0,$s1       #display $s1    #Âß¼­ÓÒÒÆ²âÊÔ£¬½«×î¸ßÎ»1ÖğÎ»ÏòÓÒÓÒÒÆÖ±ÖÁ½á¹ûÎªÁã
+add    $a0,$0,$s1       #display $s1    #é€»è¾‘å³ç§»æµ‹è¯•ï¼Œå°†æœ€é«˜ä½1é€ä½å‘å³å³ç§»ç›´è‡³ç»“æœä¸ºé›¶
 addi   $v0,$0,34        # display hex
 syscall                 # we are out of here.  
      
@@ -58,12 +58,12 @@ syscall                 # we are out of here.
 
 
 ###################################################################
-#                Âß¼­×óÒÆ²âÊÔ 
-# ÏÔÊ¾ÇøÓòÒÀ´ÎÏÔÊ¾0x00000004 0x00000010 0x00000040 0x00000100 0x00000400 0x00001000 0x00004000 0x00010000 0x00040000 0x00100000 0x00400000 0x01000000 0x04000000 0x10000000 0x40000000 0x00000000 
+#                é€»è¾‘å·¦ç§»æµ‹è¯• 
+# æ˜¾ç¤ºåŒºåŸŸä¾æ¬¡æ˜¾ç¤º0x00000004 0x00000010 0x00000040 0x00000100 0x00000400 0x00001000 0x00004000 0x00010000 0x00040000 0x00100000 0x00400000 0x01000000 0x04000000 0x10000000 0x40000000 0x00000000 
 ###################################################################
 
-addi $s1,$zero, 1        #                Âß¼­×óÒÆ²âÊÔ 
-LogicalLeftShift:         #Âß¼­×óÒÆ²âÊÔ£¬½«×îµÍÎ»1ÖğÎ»Ïò×óÒÆÖ±ÖÁ½á¹ûÎªÁã
+addi $s1,$zero, 1        #                é€»è¾‘å·¦ç§»æµ‹è¯• 
+LogicalLeftShift:         #é€»è¾‘å·¦ç§»æµ‹è¯•ï¼Œå°†æœ€ä½ä½1é€ä½å‘å·¦ç§»ç›´è‡³ç»“æœä¸ºé›¶
 sll $s1, $s1, 2  
 
 add    $a0,$0,$s1       #display $s1
@@ -75,13 +75,13 @@ j LogicalLeftShift
 
 
 ###################################################################
-#                ËãÊõÓÒÒÆ²âÊÔ 
-# ÏÔÊ¾ÇøÓòÒÀ´ÎÏÔÊ¾0x80000000 0xf0000000 0xff000000 0xfff00000 0xffff0000 0xfffff000 0xffffff00 0xfffffff0 0xffffffff 
+#                ç®—æœ¯å³ç§»æµ‹è¯• 
+# æ˜¾ç¤ºåŒºåŸŸä¾æ¬¡æ˜¾ç¤º0x80000000 0xf0000000 0xff000000 0xfff00000 0xffff0000 0xfffff000 0xffffff00 0xfffffff0 0xffffffff 
 ###################################################################
-ArithRightShift:          #ËãÊõÓÒÒÆ²âÊÔ£¬#ËãÊõÒÆÎ»²âÊÔ£¬80000000ËãÊõÓÒÒÆ£¬ÒÀ´ÎÏÔÊ¾ÎªF0000000,FF000000,FFF00000,FFFF0000Ö±ÖÁFFFFFFFF
+ArithRightShift:          #ç®—æœ¯å³ç§»æµ‹è¯•ï¼Œ#ç®—æœ¯ç§»ä½æµ‹è¯•ï¼Œ80000000ç®—æœ¯å³ç§»ï¼Œä¾æ¬¡æ˜¾ç¤ºä¸ºF0000000,FF000000,FFF00000,FFFF0000ç›´è‡³FFFFFFFF
 
-addi $s1,$zero,1     #                ËãÊõÓÒÒÆ²âÊÔ 
-sll $s1, $s1, 31   #Âß¼­×óÒÆ31Î» $s1=0x80000000
+addi $s1,$zero,1     #                ç®—æœ¯å³ç§»æµ‹è¯• 
+sll $s1, $s1, 31   #é€»è¾‘å·¦ç§»31ä½ $s1=0x80000000
 
 add    $a0,$0,$s1       #display $s1
 addi   $v0,$0,34         # display hex
@@ -142,7 +142,7 @@ addi   $v0,$0,34         # display hex
 syscall                 # we are out of here.  
 
 #############################################################
-#×ßÂíµÆ²âÊÔ,²âÊÔaddi,andi,sll,srl,sra,or,ori,nor,syscall  LED°´×ßÂíµÆ·½Ê½À´»ØÏÔÊ¾Êı¾İ
+#èµ°é©¬ç¯æµ‹è¯•,æµ‹è¯•addi,andi,sll,srl,sra,or,ori,nor,syscall  LEDæŒ‰èµ°é©¬ç¯æ–¹å¼æ¥å›æ˜¾ç¤ºæ•°æ®
 #############################################################
 
 .text
@@ -152,10 +152,10 @@ sra $s3, $s3, 31      # $s3=0xFFFFFFFF
 addu $s0,$zero,$zero   # $s0=0         
 addi $s2,$zero,12 
 
-addiu $s6,$0,3  #×ßÂíµÆ¼ÆÊı
+addiu $s6,$0,3  #èµ°é©¬ç¯è®¡æ•°
 zmd_loop:
 
-addiu $s0, $s0, 1    #¼ÆËãÏÂÒ»¸ö×ßÂíµÆµÄÊı¾İ
+addiu $s0, $s0, 1    #è®¡ç®—ä¸‹ä¸€ä¸ªèµ°é©¬ç¯çš„æ•°æ®
 andi $s0, $s0, 15  
 
 #######################################
@@ -163,7 +163,7 @@ addi $t0,$0,8
 addi $t1,$0,1
 left:
 
-sll $s3, $s3, 4   #×ßÂíµÆ×óÒÆ
+sll $s3, $s3, 4   #èµ°é©¬ç¯å·¦ç§»
 or $s3, $s3, $s0
 
 add    $a0,$0,$s3       # display $s3
@@ -174,7 +174,7 @@ sub $t0,$t0,$t1
 bne $t0,$0,left
 #######################################
 
-addi $s0, $s0, 1   #¼ÆËãÏÂÒ»¸ö×ßÂíµÆµÄÊı¾İ
+addi $s0, $s0, 1   #è®¡ç®—ä¸‹ä¸€ä¸ªèµ°é©¬ç¯çš„æ•°æ®
 addi $t8,$0,15
 and $s0, $s0, $t8
 sll $s0, $s0, 28     
@@ -184,7 +184,7 @@ addi $t1,$0,1
 
 zmd_right:
 
-srl $s3, $s3, 4  #×ßÂíµÆÓÒÒÆ
+srl $s3, $s3, 4  #èµ°é©¬ç¯å³ç§»
 or $s3, $s3, $s0
 
 addu    $a0,$0,$s3       # display $s3
@@ -211,8 +211,8 @@ addu   $a0,$0,$t0       # display $t0
 addi   $v0,$0,34         # system call for LED display 
 syscall                 # display 
 #################################################################################
-#±¾³ÌĞòÊµÏÖ0-15ºÅ×Öµ¥ÔªµÄ½µĞòÅÅĞò,´Ë³ÌĞò¿ÉÔÚmars mips·ÂÕæÆ÷ÖĞÔËĞĞ
-#ÔËĞĞÊ±Çë½«Mars SettingÖĞµÄMemory ConfigurationÉèÖÃÎªCompact£¬data at address 0
+#æœ¬ç¨‹åºå®ç°0-15å·å­—å•å…ƒçš„é™åºæ’åº,æ­¤ç¨‹åºå¯åœ¨mars mipsä»¿çœŸå™¨ä¸­è¿è¡Œ
+#è¿è¡Œæ—¶è¯·å°†Mars Settingä¸­çš„Memory Configurationè®¾ç½®ä¸ºCompactï¼Œdata at address 0
 #
 #################################################################################
  .text
@@ -272,12 +272,12 @@ sort_init:
  addi $s0,$s0,1
  
  add $s0,$zero,$zero   
- addi $s1,$zero,60   #ÅÅĞòÇø¼ä
+ addi $s1,$zero,60   #æ’åºåŒºé—´
 sort_loop:
  lw $s3,0($s0)     
  lw $s4,0($s1)
  slt $t0,$s3,$s4
- beq $t0,$0,sort_next   #½µĞòÅÅĞò
+ beq $t0,$0,sort_next   #é™åºæ’åº
  sw $s3, 0($s1)
  sw $s4, 0($s0)   
 sort_next:
@@ -300,28 +300,122 @@ sort_next:
 # insert your ccmb benchmark program here!!!
 #############################################
 
-j benchmark_start       #delete this instruction for ccmb bencmark
+
 #C1 instruction benchmark
+#SRLVç§»ä½æµ‹è¯•    revise date:2018/3/14 tiger
+#ä¾æ¬¡è¾“å‡º  0x87600000 0x08760000 0x00876000 0x00087600 0x00008760 0x00000876 0x00000087 0x00000008 0x00000000
+.text
 
+addi $t0,$zero,1     #sllv ç§»ä½æ¬¡æ•°
+addi $t1,$zero,3     #sllv ç§»ä½æ¬¡æ•°
+addi $s1,$zero, 0x876     #
+sll $s1,$s1,20     #
 
+add $a0,$0,$s1           
+addi $v0,$zero,34         # system call for print
+syscall                  # print
+
+addi $t3,$zero,8
+
+srlv_branch:
+srlv $s1,$s1,$t0     #å…ˆç§»1ä½
+srlv $s1,$s1,$t1     #å†ç§»3ä½
+add $a0,$0,$s1          
+addi $v0,$zero,34         # system call for print
+syscall                  # print
+addi $t3,$t3, -1    
+bne $t3,$zero,srlv_branch   #å¾ªç¯8æ¬¡
+
+addi   $v0,$zero,10         # system call for exit
+syscall                  # we are out of here.   
 
 #C2 instruction benchmark
+#SRAVç§»ä½æµ‹è¯•    revise date:2018/3/12 tiger
+#ä¾æ¬¡è¾“å‡º  0x87600000 0xf8760000 0xff876000 0xfff87600 0xffff8760 0xfffff876 0xffffff87 0xfffffff8 0xffffffff
 
+.text
 
+addi $t0,$zero,1     #sllv ç§»ä½æ¬¡æ•°
+addi $t1,$zero,3     #sllv ç§»ä½æ¬¡æ•°
+addi $s1,$zero, 0x876     #
+sll $s1,$s1,20     #
+
+add $a0,$0,$s1           
+addi $v0,$zero,34         # system call for print
+syscall                  # print
+
+addi $t3,$zero,8
+
+srav_branch:
+srav $s1,$s1,$t0     #å…ˆç§»1ä½
+srav $s1,$s1,$t1     #å†ç§»3ä½
+add $a0,$0,$s1          
+addi $v0,$zero,34         # system call for print
+syscall                  # print
+addi $t3,$t3, -1    
+bne $t3,$zero,srav_branch   #å¾ªç¯8æ¬¡
+
+addi   $v0,$zero,10         # system call for exit
+syscall                  # we are out of here.   
 
 #Mem instruction benchmark
+#SH æµ‹è¯•    revise date:2018/3/14 tiger
+#ä¾æ¬¡è¾“å‡º 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005 0x00000006 0x00000007 0x00000008 0x00000009 0x0000000a 0x0000000b 0x0000000c 0x0000000d 0x0000000e 0x0000000f 0x00000010 0x00000011 0x00000012 0x00000013 0x00000014 0x00000015 0x00000016 0x00000017 0x00000018 0x00000019 0x0000001a 0x0000001b 0x0000001c 0x0000001d 0x0000001e 0x0000001f 0x00000020 0x00020001 0x00040003 0x00060005 0x00080007 0x000a0009 0x000c000b 0x000e000d 0x0010000f 0x00120011 0x00140013 0x00160015 0x00180017 0x001a0019 0x001c001b 0x001e001d 0x0020001f
+
+.text
+
+addi $t1,$zero,0     #init_addr 
+addi $t3,$zero,32     #counter
+
+#SHå†™å…¥ 01,02,03,04
+addi $s1,$zero, 0x0001  #
+addi $s2,$zero, 0x01  #
+sh_store:
+sh $s1,($t1)
+add $a0,$0,$s1          
+addi $v0,$zero,34         # system call for print
+syscall                  # print
+
+add $s1,$s1,$s2   #data +1
+addi $t1,$t1,2    # addr +4  
+addi $t3,$t3,-1   #counter
+bne $t3,$zero,sh_store
 
 
+addi $t3,$zero,16
+addi $t1,$zero,0    # addr 
+sh_branch:
+lw $s1,($t1)     
+add $a0,$0,$s1          
+addi $v0,$zero,34         # system call for print
+syscall                  # print
+addi $t1,$t1,4    
+addi $t3,$t3, -1    
+bne $t3,$zero,sh_branch
 
+addi   $v0,$zero,10         # system call for exit
+syscall                  # we are out of here.   
 
 #Branch instruction benchmark
+#blez æµ‹è¯•    å°äºç­‰äºé›¶è·³è½¬     ç´¯åŠ è¿ç®—ï¼Œä»è´Ÿæ•°å¼€å§‹å‘é›¶è¿ç®—  revise date:2018/3/12 tiger  
+#ä¾æ¬¡è¾“å‡º0xfffffff1 0xfffffff2 0xfffffff3 0xfffffff4 0xfffffff5 0xfffffff6 0xfffffff7 0xfffffff8 0xfffffff9 0xfffffffa 0xfffffffb 0xfffffffc 0xfffffffd 0xfffffffe 0xffffffff 0x00000000
+.text
+
+addi $s1,$zero,-15       #åˆå§‹å€¼
+blez_branch:
+add $a0,$0,$s1          
+addi $v0,$zero,34         
+syscall                  #è¾“å‡ºå½“å‰å€¼
+addi $s1,$s1,1  
+blez $s1,blez_branch   
 
 
-                 
- addi   $v0,$zero,10         # system call for exit
- syscall                  # we are out of here.   
- 
- #MIPS´¦ÀíÆ÷ÊµÏÖÖĞÇëÓÃÍ£»úÖ¸ÁîÊµÏÖsyscall
+addi   $v0,$zero,10         
+syscall                  # æš‚åœæˆ–é€€å‡º
+
+j benchmark_start       #delete this instruction for ccmb bencmark
+
+
 
 jmp_count: addi $s0,$zero, 0
        addi $s0,$s0, 1
